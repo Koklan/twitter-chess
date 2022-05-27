@@ -38,7 +38,7 @@ class Field:
     
     #returns pixel position for chesspiece icon pasting 
     def pos_data(self):
-        return (70 + string.ascii_lowercase.index(self.col()) * 120, 70 + (8 - self.row()) * 120)
+        return (70 + characters.index(self.col()) * 120, 70 + (8 - self.row()) * 120)
 
     def occupied(self, flag = None):
         for field in fields:
@@ -52,19 +52,19 @@ class Field:
 
             
 
-chessboard = Image.open('chessboard.png')
-black_knight_img = Image.open('black_knight.png').convert('RGBA')
-red_knight_img = Image.open('red_knight.png').convert('RGBA')
-black_rook_img = Image.open('black_rook.png').convert('RGBA')
-red_rook_img = Image.open('red_rook.png').convert('RGBA')
-black_queen_img = Image.open('black_queen.png').convert('RGBA')
-red_queen_img = Image.open('red_queen.png').convert('RGBA')
-black_king_img = Image.open('black_king.png').convert('RGBA')
-red_king_img = Image.open('red_king.png').convert('RGBA')
-black_bishop_img = Image.open('black_bishop.png').convert('RGBA')
-red_bishop_img = Image.open('red_bishop.png').convert('RGBA')
-black_pawn_img = Image.open('black_pawn.png').convert('RGBA')
-red_pawn_img = Image.open('red_pawn.png').convert('RGBA')
+chessboard = Image.open('images/chessboard.png')
+black_knight_img = Image.open('images/black_knight.png').convert('RGBA')
+red_knight_img = Image.open('images/red_knight.png').convert('RGBA')
+black_rook_img = Image.open('images/black_rook.png').convert('RGBA')
+red_rook_img = Image.open('images/red_rook.png').convert('RGBA')
+black_queen_img = Image.open('images/black_queen.png').convert('RGBA')
+red_queen_img = Image.open('images/red_queen.png').convert('RGBA')
+black_king_img = Image.open('images/black_king.png').convert('RGBA')
+red_king_img = Image.open('images/red_king.png').convert('RGBA')
+black_bishop_img = Image.open('images/black_bishop.png').convert('RGBA')
+red_bishop_img = Image.open('images/red_bishop.png').convert('RGBA')
+black_pawn_img = Image.open('images/black_pawn.png').convert('RGBA')
+red_pawn_img = Image.open('images/red_pawn.png').convert('RGBA')
 
 class Chesspiece:
     def __init__(self, color, position, img):
@@ -94,7 +94,7 @@ class Chesspiece:
         col_moved = []
         row_moved = []
         # print(end_pos)
-        if string.ascii_lowercase.index(end_pos.col()) > characters.index(self.col()):
+        if characters.index(end_pos.col()) > characters.index(self.col()):
             for i in range(characters.index(self.col()) + 1,
                            characters.index(end_pos.col())):
                 print(i)
